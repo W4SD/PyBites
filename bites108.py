@@ -42,4 +42,19 @@ def get_total_points(belts=ninja_belts):
        them all over the place!)
 
        Return the total number of points int from the function."""
-    pass
+    print(belts)
+    total = 0
+    for belt in belts.keys():
+        print(belts[belt].score)
+        total += belts[belt].score * belts[belt].ninjas
+
+    # using belts.values() gives the value of a key as an object
+    # for belt in belts.values():
+    #    print(belt.score)
+    # -> gives 50, 100, ... etc
+    return total
+
+
+print(ninja_belts['yellow'].score)
+print(get_total_points())
+

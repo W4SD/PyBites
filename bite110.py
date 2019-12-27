@@ -22,4 +22,18 @@ def divide_numbers(numerator, denominator):
        ValueError reraise it. Following do the division and return the result.
        However if denominator is 0 catch the corresponding exception Python
        throws (cannot divide by 0), and return 0"""
-    pass
+
+    try:
+        numerator = int(numerator)
+        denominator = int(denominator)
+    except ValueError:
+        raise ValueError
+
+    try:
+        return numerator / denominator
+    except ZeroDivisionError:
+        return 0
+
+
+
+print(divide_numbers("3", 0))

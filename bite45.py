@@ -1,5 +1,7 @@
 # Bite 45. Keep a queue of last n items
 
+import queue
+
 """
 How about writing a queue that holds the last 5 items?
 
@@ -12,14 +14,14 @@ See an example output below and the tests that check for various values of n. Ha
 """
 
 def my_queue(n=5):
-    pass
+    return queue.Queue(maxsize=5)
 
 
 if __name__ == '__main__':
     mq = my_queue()
     for i in range(10):
-        mq.append(i)
-        print((i, list(mq)))
+        mq.put(i)
+        print((i, mq.queue))
 
     """Queue size does not go beyond n int, this outputs:
     (0, [0])
